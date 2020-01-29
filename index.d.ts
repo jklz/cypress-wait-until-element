@@ -1,24 +1,29 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
+declare global {
+    namespace Cypress {
 
-declare namespace Cypress {
-    interface Chainable<Subject = any> {
-        waitUntilExists<Subject>(
-            selector: string,
-            options?: WaitUntilElementOptions
-        ): Chainable<Subject>;
-        waitUntilNotExists<Subject>(
-            selector: string,
-            options?: WaitUntilElementOptions
-        ): Chainable<Subject>;
-        waitUntilVisible<Subject>(
-            selector: string,
-            options?: WaitUntilElementOptions
-        ): Chainable<Subject>;
-        waitUntilHidden<Subject>(
-            selector: string,
-            options?: WaitUntilElementOptions
-        ): Chainable<Subject>;
+        interface Chainable<Subject = any> {
+            waitUntilExists<Subject>(
+                selector: string,
+                options?: WaitUntilElementOptions
+            ): Chainable<Subject>;
+
+            waitUntilNotExists<Subject>(
+                selector: string,
+                options?: WaitUntilElementOptions
+            ): Chainable<Subject>;
+
+            waitUntilVisible<Subject>(
+                selector: string,
+                options?: WaitUntilElementOptions
+            ): Chainable<Subject>;
+
+            waitUntilHidden<Subject>(
+                selector: string,
+                options?: WaitUntilElementOptions
+            ): Chainable<Subject>;
+        }
     }
 }
 /** options */
